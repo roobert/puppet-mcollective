@@ -1,4 +1,9 @@
-class mcollective::config {
+class mcollective::config (
+  $host,
+  $port,
+  $username,
+  $password,
+) {
   if $mcollective::server == true {
     file { '/etc/puppetlabs/mcollective/server.cfg':
       content => template('mcollective/server.cfg.erb'),

@@ -5,6 +5,12 @@ class mcollective (
   $username = undef,
   $password = undef,
 ) {
-  class { 'mcollective::config':  } ->
+  class { 'mcollective::config':
+    server   => $server,
+    host     => $host,
+    port     => $port,
+    username => $username,
+    password => $password,
+  } ->
   class { 'mcollective::service': }
 }
