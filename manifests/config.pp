@@ -4,14 +4,12 @@ class mcollective::config (
   $username,
   $password,
 ) {
-  if $mcollective::server == true {
-    file { '/etc/puppetlabs/mcollective/server.cfg':
-      content => template('mcollective/server.cfg.erb'),
-      mode    => '0600',
-      owner   => 'root',
-      group   => 'root',
-      notify  => Service['mcollective'],
-    }
+  file { '/etc/puppetlabs/mcollective/server.cfg':
+    content => template('mcollective/server.cfg.erb'),
+    mode    => '0600',
+    owner   => 'root',
+    group   => 'root',
+    notify  => Service['mcollective'],
   }
 
   file { '/etc/puppetlabs/mcollective/client.cfg':

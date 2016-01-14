@@ -1,5 +1,4 @@
 class mcollective (
-  $server   = false,
   $host     = 'mcollective',
   $port     = 61613,
   $username = 'mcollective',

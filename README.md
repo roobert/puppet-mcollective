@@ -13,8 +13,8 @@ rabbitmq-plugins enable rabbitmq_management
 wget https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/rabbitmq_v3_6_0/bin/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin
 chmod +x /usr/local/bin/rabbitmqadmin
 
-MCOLLECTIVE_PASSWORD="changeme"
-ADMIN_PASSWORD="changeme"
+MCOLLECTIVE_PASSWORD="574g3mc0cl13nt,,"
+ADMIN_PASSWORD="574gasjkdhasd,,"
 
 rabbitmqadmin declare vhost name=/mcollective
 
