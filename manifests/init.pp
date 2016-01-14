@@ -1,7 +1,7 @@
 class mcollective (
   $server   = false,
   $host     = 'mcollective',
-  $port     = 61613,
+  $port     = 5671,
   $username = undef,
   $password = undef,
 ) {
