@@ -2,7 +2,7 @@ class mcollective (
   $server   = false,
   $host     = 'mcollective',
   $port     = 61613,
-  $username = undef,
+  $username = 'mcollective',
   $password = undef,
 ) {
   class { 'mcollective::config':
