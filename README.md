@@ -22,6 +22,11 @@ $RMQ_CMD declare permission vhost=/mcollective user=mcollective configure='.*' w
 
 $RMQ_CMD declare user name=admin password=changeme tags=administrator
 $RMQ_CMD declare permission vhost=/mcollective user=admin configure='.*' write='.*' read='.*'
+
+for collective in mcollective ; do
+  $RMQ_CMD declare exchange --vhost=/mcollective name=${collective}_broadcast type=topic
+  $RMQ_CMD declare exchange --user=admin --password=changeme --vhost=/mcollective name=${collective}_directed type=direct
+done
 ```
 
 Taken from: https://docs.puppetlabs.com/mcollective/reference/plugins/connector_rabbitmq.html#configuring-rabbitmq
