@@ -19,14 +19,14 @@ ADMIN_PASSWORD="574gasjkdhasd,,"
 rabbitmqadmin declare vhost name=/mcollective
 
 rabbitmqadmin declare user name=mcollective password=${MCOLLECTIVE_PASSWORD} tags=
-$RMQ_CMD declare permission vhost=/mcollective user=mcollective configure='.*' write='.*' read='.*'
+rabbitmqadmin declare permission vhost=/mcollective user=mcollective configure='.*' write='.*' read='.*'
 
-$RMQ_CMD declare user name=admin password=${ADMIN_PASSWORD} tags=administrator
-$RMQ_CMD declare permission vhost=/mcollective user=admin configure='.*' write='.*' read='.*'
+rabbitmqadmin declare user name=admin password=${ADMIN_PASSWORD} tags=administrator
+rabbitmqadmin declare permission vhost=/mcollective user=admin configure='.*' write='.*' read='.*'
 
 for collective in mcollective ; do
-  $RMQ_CMD declare exchange --user=admin --password=${ADMIN_PASSWORD} --vhost=/mcollective name=${collective}_broadcast type=topic
-  $RMQ_CMD declare exchange --user=admin --password=${ADMIN_PASSWORD} --vhost=/mcollective name=${collective}_directed type=direct
+  rabbitmqadmin declare exchange --user=admin --password=${ADMIN_PASSWORD} --vhost=/mcollective name=${collective}_broadcast type=topic
+  rabbitmqadmin declare exchange --user=admin --password=${ADMIN_PASSWORD} --vhost=/mcollective name=${collective}_directed type=direct
 done
 ```
 
