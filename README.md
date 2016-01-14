@@ -5,6 +5,9 @@ This module configures mcollective server and client components to use a rabbitm
 An mcollective vhost must be declaired manually on the rabbitmq server:
 
 ```
+# enable STOMP plugin
+rabbitmq-plugins enable rabbitmq_stomp
+
 # install rabbitmqadmin tool (https://www.rabbitmq.com/management.html)
 rabbitmq-plugins enable rabbitmq_management
 wget https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/rabbitmq_v3_6_0/bin/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin
