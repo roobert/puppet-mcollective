@@ -3,7 +3,7 @@ class mcollective::service {
 
   service { 'mcollective':
     ensure  => running,
-    enabled => true,
+    enable  => true,
     require => Package['puppet-agent'],
   }
 }
